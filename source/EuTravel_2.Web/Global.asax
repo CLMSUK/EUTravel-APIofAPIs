@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="EuTravel_2.Web.Global" Language="C#" %>

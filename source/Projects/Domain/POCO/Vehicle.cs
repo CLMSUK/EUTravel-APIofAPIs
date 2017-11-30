@@ -1,0 +1,309 @@
+using System;
+using System.Runtime.Serialization;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Collections;
+using System.ComponentModel.DataAnnotations;
+
+namespace EuTravel_2.BO
+{
+    /// <summary>
+    /// The Vehicle class
+    ///
+    /// </summary>
+    [Serializable]
+    [DataContract]
+    [KnownType(typeof(Ferry))]
+
+    [KnownType(typeof(Train))]
+
+    [KnownType(typeof(UrbanTransportMeans))]
+
+    [KnownType(typeof(Aircraft))]
+
+    public class Vehicle : IDomainModelClass
+    {
+        #region Vehicle's Fields
+
+        protected Guid _transientId= Guid.NewGuid();
+        public virtual Guid TransientId
+        {
+            get
+            {
+                return _transientId;
+            }
+            set
+            {
+                _transientId = value;
+            }
+        }
+        [DataMember(Name="Id")]
+        protected int? id = 0;
+        [DataMember(Name="SeatAssignable")]
+        protected bool seatAssignable;
+        [DataMember(Name="RegistrationID")]
+        protected string registrationID;
+        #endregion
+        #region Vehicle's Properties
+/// <summary>
+/// The Id property
+///
+/// </summary>
+///
+        [Key]
+        public virtual int? Id
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+/// <summary>
+/// The SeatAssignable property
+///
+/// </summary>
+///
+        public virtual bool SeatAssignable
+        {
+            get
+            {
+                return seatAssignable;
+            }
+            set
+            {
+                seatAssignable = value;
+            }
+        }
+/// <summary>
+/// The RegistrationID property
+///
+/// </summary>
+///
+        public virtual string RegistrationID
+        {
+            get
+            {
+                return registrationID;
+            }
+            set
+            {
+                registrationID = value;
+            }
+        }
+        #endregion
+        #region Vehicle's Participant Properties
+        [DataMember(Name="VehicleType")]
+        protected VehicleType vehicleType;
+        public virtual VehicleType VehicleType
+        {
+            get
+            {
+                return vehicleType;
+            }
+            set
+            {
+                if(Equals(vehicleType, value)) return;
+                var __oldValue = vehicleType;
+                if (value != null)
+                {
+                    vehicleType = value;
+                }
+                else
+                {
+                    vehicleType = null;
+                }
+            }
+        }
+        #endregion
+        #region Constructors
+/// <summary>
+/// Public constructors of the Vehicle class
+/// </summary>
+/// <returns>New Vehicle object</returns>
+/// <remarks></remarks>
+        public Vehicle() {}
+        #endregion
+        #region Methods
+
+        public virtual List<string> _Validate(bool throwException = true)
+        {
+            var __errors = new List<string>();
+            if (Id == null)
+            {
+                __errors.Add("Property 'Id' is required.");
+            }
+            if (RegistrationID != null && RegistrationID.Length > 100)
+            {
+                __errors.Add("Length of property 'RegistrationID' cannot be greater than 100.");
+            }
+            if (VehicleType == null)
+            {
+                __errors.Add("Association with 'VehicleType' is required.");
+            }
+            if (throwException && __errors.Any())
+            {
+                throw new BusinessException("An instance of TypeClass 'Vehicle' has validation errors:\r\n\r\n" + string.Join("\r\n", __errors));
+            }
+            return __errors;
+        }
+
+/// <summary>
+/// Copies the current object to a new instance
+/// </summary>
+/// <param name="deep">Copy members that refer to objects external to this class (not dependent)</param>
+/// <param name="copiedObjects">Objects that should be reused</param>
+/// <param name="asNew">Copy the current object as a new one, ready to be persisted, along all its members.</param>
+/// <param name="reuseNestedObjects">If asNew is true, this flag if set, forces the reuse of all external objects.</param>
+/// <param name="copy">Optional - An existing [Vehicle] instance to use as the destination.</param>
+/// <returns>A copy of the object</returns>
+        public virtual Vehicle Copy(bool deep=false, Hashtable copiedObjects=null, bool asNew=false, bool reuseNestedObjects = false, Vehicle copy = null)
+        {
+            if(copiedObjects == null)
+            {
+                copiedObjects = new Hashtable();
+            }
+            if (copy == null && copiedObjects.Contains(this))
+                return (Vehicle)copiedObjects[this];
+            copy = copy ?? new Vehicle();
+            if (!asNew)
+            {
+                copy.TransientId = this.TransientId;
+                copy.Id = this.Id;
+            }
+            copy.SeatAssignable = this.SeatAssignable;
+            copy.RegistrationID = this.RegistrationID;
+            if (!copiedObjects.Contains(this))
+            {
+                copiedObjects.Add(this, copy);
+            }
+            if(deep && this.vehicleType != null)
+            {
+                if (!copiedObjects.Contains(this.vehicleType))
+                {
+                    if (asNew && reuseNestedObjects)
+                        copy.VehicleType = this.VehicleType;
+                    else if (asNew)
+                        copy.VehicleType = this.VehicleType.Copy(deep, copiedObjects, true);
+                    else
+                        copy.vehicleType = this.vehicleType.Copy(deep, copiedObjects, false);
+                }
+                else
+                {
+                    if (asNew)
+                        copy.VehicleType = (VehicleType)copiedObjects[this.VehicleType];
+                    else
+                        copy.vehicleType = (VehicleType)copiedObjects[this.VehicleType];
+                }
+            }
+            return copy;
+        }
+
+        public override bool Equals(object obj)
+        {
+            var compareTo = obj as Vehicle;
+            if (ReferenceEquals(this, compareTo))
+            {
+                return true;
+            }
+            if (compareTo == null || !this.GetType().Equals(compareTo.GetTypeUnproxied()))
+            {
+                return false;
+            }
+            if (this.HasSameNonDefaultIdAs(compareTo))
+            {
+                return true;
+            }
+            // Since the Ids aren't the same, both of them must be transient to
+            // compare domain signatures; because if one is transient and the
+            // other is a persisted entity, then they cannot be the same object.
+            return this.IsTransient() && compareTo.IsTransient() && (base.Equals(compareTo) || this.TransientId.Equals(compareTo.TransientId));
+        }
+
+        private PropertyInfo __propertyKeyCache;
+        public virtual PropertyInfo GetPrimaryKey()
+        {
+            if (__propertyKeyCache == null)
+            {
+                __propertyKeyCache = this.GetType().GetProperty("Id");
+            }
+            return __propertyKeyCache;
+        }
+
+
+/// <summary>
+///     To help ensure hashcode uniqueness, a carefully selected random number multiplier
+///     is used within the calculation.  Goodrich and Tamassia's Data Structures and
+///     Algorithms in Java asserts that 31, 33, 37, 39 and 41 will produce the fewest number
+///     of collissions.  See http://computinglife.wordpress.com/2008/11/20/why-do-hash-functions-use-prime-numbers/
+///     for more information.
+/// </summary>
+        private const int HashMultiplier = 31;
+        private int? cachedHashcode;
+
+        public override int GetHashCode()
+        {
+            if (this.cachedHashcode.HasValue)
+            {
+                return this.cachedHashcode.Value;
+            }
+            if (this.IsTransient())
+            {
+                //this.cachedHashcode = base.GetHashCode();
+                return this.TransientId.GetHashCode(); //don't cache because this won't stay transient forever
+            }
+            else
+            {
+                unchecked
+                {
+                    // It's possible for two objects to return the same hash code based on
+                    // identically valued properties, even if they're of two different types,
+                    // so we include the object's type in the hash calculation
+                    var hashCode = this.GetType().GetHashCode();
+                    this.cachedHashcode = (hashCode * HashMultiplier) ^ this.Id.GetHashCode();
+                }
+            }
+            return this.cachedHashcode.Value;
+        }
+
+/// <summary>
+///     Transient objects are not associated with an item already in storage.  For instance,
+///     a Customer is transient if its Id is 0.  It's virtual to allow NHibernate-backed
+///     objects to be lazily loaded.
+/// </summary>
+        public virtual bool IsTransient()
+        {
+            return this.Id == default(int) || this.Id.Equals(default(int));
+        }
+
+/// <summary>
+///     When NHibernate proxies objects, it masks the type of the actual entity object.
+///     This wrapper burrows into the proxied object to get its actual type.
+///
+///     Although this assumes NHibernate is being used, it doesn't require any NHibernate
+///     related dependencies and has no bad side effects if NHibernate isn't being used.
+///
+///     Related discussion is at http://groups.google.com/group/sharp-architecture/browse_thread/thread/ddd05f9baede023a ...thanks Jay Oliver!
+/// </summary>
+        protected virtual System.Type GetTypeUnproxied()
+        {
+            return this.GetType();
+        }
+
+/// <summary>
+///     Returns true if self and the provided entity have the same Id values
+///     and the Ids are not of the default Id value
+/// </summary>
+        protected bool HasSameNonDefaultIdAs(Vehicle compareTo)
+        {
+            return !this.IsTransient() && !compareTo.IsTransient() && this.Id.Equals(compareTo.Id);
+        }
+
+        #endregion
+    }
+}

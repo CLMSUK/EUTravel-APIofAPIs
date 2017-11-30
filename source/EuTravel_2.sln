@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuTravel_2.Web", "EuTravel_2.Web\EuTravel_2.Web.csproj", "{F838DFD4-8FA5-4610-A37C-EC3E1A516023}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuTravel_2.BO", "Projects\Domain\POCO\EuTravel_2.BO.csproj", "{6CC5A2BA-16C8-4B53-801B-1E822E36B367}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain Model", "Domain Model", "{409E8C30-2326-440B-8266-D8C5947D1C4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F838DFD4-8FA5-4610-A37C-EC3E1A516023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F838DFD4-8FA5-4610-A37C-EC3E1A516023}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F838DFD4-8FA5-4610-A37C-EC3E1A516023}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F838DFD4-8FA5-4610-A37C-EC3E1A516023}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC5A2BA-16C8-4B53-801B-1E822E36B367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC5A2BA-16C8-4B53-801B-1E822E36B367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC5A2BA-16C8-4B53-801B-1E822E36B367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC5A2BA-16C8-4B53-801B-1E822E36B367}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6CC5A2BA-16C8-4B53-801B-1E822E36B367} = {409E8C30-2326-440B-8266-D8C5947D1C4B}
+	EndGlobalSection
+EndGlobal

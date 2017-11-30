@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration>Debug</Configuration>
+    <Platform>AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <ProjectGuid>{6CC5A2BA-16C8-4B53-801B-1E822E36B367}</ProjectGuid>
+    <AssemblyName>EuTravel_2.BO</AssemblyName>
+    <RootNamespace>EuTravel_2.BO</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>bin\Debug\EuTravel_2.BO.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>1591</NoWarn>
+    <DocumentationFile>bin\Release\EuTravel_2.BO.XML</DocumentationFile>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptModuleKind>CommonJS</TypeScriptModuleKind>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccomodationDetails.cs" />
+    <Compile Include="AddressType.cs" />
+    <Compile Include="Aircraft.cs" />
+    <Compile Include="Airline.cs" />
+    <Compile Include="Airport.cs" />
+    <Compile Include="Amadeus.cs" />
+    <Compile Include="Amenity.cs" />
+    <Compile Include="ApplicationClient.cs" />
+    <Compile Include="ApplicationLanguage.cs" />
+    <Compile Include="ApplicationOperation.cs" />
+    <Compile Include="ApplicationPermission.cs" />
+    <Compile Include="ApplicationRole.cs" />
+    <Compile Include="ApplicationSetting.cs" />
+    <Compile Include="ApplicationTheme.cs" />
+    <Compile Include="ApplicationUser.cs" />
+    <Compile Include="ApplicationUserAction.cs" />
+    <Compile Include="ApplicationUserClaim.cs" />
+    <Compile Include="ApplicationUserExternalProfile.cs" />
+    <Compile Include="ApplicationUserLogin.cs" />
+    <Compile Include="AuditEntityConfiguration.cs" />
+    <Compile Include="AuditLogEntry.cs" />
+    <Compile Include="AuditLogEntryType.cs" />
+    <Compile Include="AuditLogPropertyActionType.cs" />
+    <Compile Include="AuditPropertyConfiguration.cs" />
+    <Compile Include="AvailabilityStatus.cs" />
+    <Compile Include="AVGAT.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BookingConfirmation.cs" />
+    <Compile Include="BookingQuery.cs" />
+    <Compile Include="BookingResponse.cs" />
+    <Compile Include="BookingStatus.cs" />
+    <Compile Include="BusinessException.cs" />
+    <Compile Include="CardType.cs" />
+    <Compile Include="Cash.cs" />
+    <Compile Include="Charge.cs" />
+    <Compile Include="ChargeType.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="ClassOfService.cs" />
+    <Compile Include="CLINF.cs" />
+    <Compile Include="CoachAgency.cs" />
+    <Compile Include="CoachStation.cs" />
+    <Compile Include="Color.cs" />
+    <Compile Include="COMBS.cs" />
+    <Compile Include="COMCP.cs" />
+    <Compile Include="COMIS.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ContactInformation.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="CreditCard.cs" />
+    <Compile Include="Currency.cs" />
+    <Compile Include="D2DError.cs" />
+    <Compile Include="Datasource.cs" />
+    <Compile Include="DATEF.cs" />
+    <Compile Include="DatesAssociation.cs" />
+    <Compile Include="DateTimeFormat.cs" />
+    <Compile Include="DATUR.cs" />
+    <Compile Include="Demokritos.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DiaryApplication.cs" />
+    <Compile Include="Dimension.cs" />
+    <Compile Include="DirectionType.cs" />
+    <Compile Include="DiscountCard.cs" />
+    <Compile Include="Distance.cs" />
+    <Compile Include="DistanceUnit.cs" />
+    <Compile Include="Distribusion.cs" />
+    <Compile Include="DistributionStation.cs" />
+    <Compile Include="ElementData.cs" />
+    <Compile Include="EnettVan.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="Eurolines.cs" />
+    <Compile Include="EuTravelDiaryGeoCoordinatesDTO.cs" />
+    <Compile Include="EuTravelDiaryNoteDTO.cs" />
+    <Compile Include="EuTravelDiaryPersonDTO.cs" />
+    <Compile Include="EuTravelDiaryPhotographDTO.cs" />
+    <Compile Include="EuTravelDiaryPOIDTO.cs" />
+    <Compile Include="EuTravelDiaryUtils.cs" />
+    <Compile Include="ExportedFile.cs" />
+    <Compile Include="EXTEVG.cs" />
+    <Compile Include="Fare.cs" />
+    <Compile Include="FareAttributes.cs" />
+    <Compile Include="FareStation.cs" />
+    <Compile Include="FareType.cs" />
+    <Compile Include="FBPEN.cs" />
+    <Compile Include="FBSCO.cs" />
+    <Compile Include="FeedInfo.cs" />
+    <Compile Include="Ferry.cs" />
+    <Compile Include="FerryGateway.cs" />
+    <Compile Include="FerryGatewayCostDetails.cs" />
+    <Compile Include="FlightRoute.cs" />
+    <Compile Include="FlightSegment.cs" />
+    <Compile Include="FOCIM.cs" />
+    <Compile Include="FormOfPayment.cs" />
+    <Compile Include="ForthCRS.cs" />
+    <Compile Include="Frequency.cs" />
+    <Compile Include="from.cs" />
+    <Compile Include="FuelType.cs" />
+    <Compile Include="Gender.cs" />
+    <Compile Include="GeoCoordinates.cs" />
+    <Compile Include="GetSolutionDetailsResponse.cs" />
+    <Compile Include="GetSolutionsForLegResponse.cs" />
+    <Compile Include="GraphElement.cs" />
+    <Compile Include="GraphOptimizer.cs" />
+    <Compile Include="GraphRelation.cs" />
+    <Compile Include="GraphResponse.cs" />
+    <Compile Include="GraphSearchData.cs" />
+    <Compile Include="Guarantee.cs" />
+    <Compile Include="GuaranteeType.cs" />
+    <Compile Include="Identification.cs" />
+    <Compile Include="IdentificationType.cs" />
+    <Compile Include="IDomainModelClass.cs" />
+    <Compile Include="ImportMechanics.cs" />
+    <Compile Include="InFlightService.cs" />
+    <Compile Include="intermediateStops.cs" />
+    <Compile Include="IntermodalConnection.cs" />
+    <Compile Include="itineraries.cs" />
+    <Compile Include="ItineraryRoute.cs" />
+    <Compile Include="ItinerarySegment.cs" />
+    <Compile Include="ItineraryStation.cs" />
+    <Compile Include="ItineraryStatus.cs" />
+    <Compile Include="KPIsResponse.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="Leg.cs" />
+    <Compile Include="LegBookingInput.cs" />
+    <Compile Include="LegConfirmation.cs" />
+    <Compile Include="legGeometry.cs" />
+    <Compile Include="LegIdInput.cs" />
+    <Compile Include="legs.cs" />
+    <Compile Include="LegsDetailsResponse.cs" />
+    <Compile Include="LegsDTO.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="LocationInput.cs" />
+    <Compile Include="LocationPair.cs" />
+    <Compile Include="LocationType.cs" />
+    <Compile Include="LogEntity.cs" />
+    <Compile Include="LoyaltyCard.cs" />
+    <Compile Include="LTBRA.cs" />
+    <Compile Include="MarineAgency.cs" />
+    <Compile Include="MarineRoute.cs" />
+    <Compile Include="MarineSegment.cs" />
+    <Compile Include="MCT.cs" />
+    <Compile Include="Meal.cs" />
+    <Compile Include="MeasurementUnit.cs" />
+    <Compile Include="MONEP.cs" />
+    <Compile Include="NationalExpress.cs" />
+    <Compile Include="NCSRDDoorToDoorRoot.cs" />
+    <Compile Include="Note.cs" />
+    <Compile Include="NoteResponse.cs" />
+    <Compile Include="NullableMethodExtensions.cs" />
+    <Compile Include="OAGUtils.cs" />
+    <Compile Include="OnBoardDetails.cs" />
+    <Compile Include="OperatingSystemEnum.cs" />
+    <Compile Include="OperatorCompany.cs" />
+    <Compile Include="Optimizer.cs" />
+    <Compile Include="Organization.cs" />
+    <Compile Include="Passenger.cs" />
+    <Compile Include="PassengerAccessType.cs" />
+    <Compile Include="PassengerCategory.cs" />
+    <Compile Include="Payment.cs" />
+    <Compile Include="PaymentMethod.cs" />
+    <Compile Include="PermittedTransfers.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonHelperDTO.cs" />
+    <Compile Include="PersonResponse.cs" />
+    <Compile Include="Pet.cs" />
+    <Compile Include="Pharos.cs" />
+    <Compile Include="PharosAccommodationDetails.cs" />
+    <Compile Include="Photograph.cs" />
+    <Compile Include="PhotoResponse.cs" />
+    <Compile Include="plan.cs" />
+    <Compile Include="PlanningQuery.cs" />
+    <Compile Include="PlanningResponse.cs" />
+    <Compile Include="PlanningWrapper.cs" />
+    <Compile Include="planTo.cs" />
+    <Compile Include="PointOfInterest.cs" />
+    <Compile Include="POIResponse.cs" />
+    <Compile Include="Port.cs" />
+    <Compile Include="PostalAddress.cs" />
+    <Compile Include="Preference.cs" />
+    <Compile Include="PreferenceType.cs" />
+    <Compile Include="Prefixes.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="ProfileSetting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RailAgency.cs" />
+    <Compile Include="RailRoute.cs" />
+    <Compile Include="RailSegment.cs" />
+    <Compile Include="ReducedMobility.cs" />
+    <Compile Include="requestParameters.cs" />
+    <Compile Include="RequestWrapper.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="RoutesCountResponse.cs" />
+    <Compile Include="RouteTimeDetails.cs" />
+    <Compile Include="RouteType.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="ServiceLog.cs" />
+    <Compile Include="ServiceMetric.cs" />
+    <Compile Include="ServiceSource.cs" />
+    <Compile Include="ServiceStatistics.cs" />
+    <Compile Include="ServiceType.cs" />
+    <Compile Include="ShipFacilities.cs" />
+    <Compile Include="ShoppingQuery.cs" />
+    <Compile Include="ShoppingResponse.cs" />
+    <Compile Include="Silverrail.cs" />
+    <Compile Include="SilverrailStationType.cs" />
+    <Compile Include="SOLCOM.cs" />
+    <Compile Include="SOLCOV.cs" />
+    <Compile Include="SOLPO.cs" />
+    <Compile Include="Solution.cs" />
+    <Compile Include="SolutionWrapper.cs" />
+    <Compile Include="SpecialRequirement.cs" />
+    <Compile Include="SRAVG.cs" />
+    <Compile Include="SRINT.cs" />
+    <Compile Include="SRTHR.cs" />
+    <Compile Include="Station.cs" />
+    <Compile Include="StationPair.cs" />
+    <Compile Include="StationResponse.cs" />
+    <Compile Include="StationType.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="STEAU.cs" />
+    <Compile Include="STEPA.cs" />
+    <Compile Include="steps.cs" />
+    <Compile Include="stopId.cs" />
+    <Compile Include="StopTimeDetails.cs" />
+    <Compile Include="StringWorkaround.cs" />
+    <Compile Include="Suffixes.cs" />
+    <Compile Include="Terminal.cs" />
+    <Compile Include="TIMBO.cs" />
+    <Compile Include="TimePeriod.cs" />
+    <Compile Include="Timepoint.cs" />
+    <Compile Include="Timezone.cs" />
+    <Compile Include="TIMPA.cs" />
+    <Compile Include="TIMPL.cs" />
+    <Compile Include="TIMSH.cs" />
+    <Compile Include="TIMTI.cs" />
+    <Compile Include="TIMUC.cs" />
+    <Compile Include="TitleEnum.cs" />
+    <Compile Include="to.cs" />
+    <Compile Include="toStopId.cs" />
+    <Compile Include="Train.cs" />
+    <Compile Include="TrainStation.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="Transfer.cs" />
+    <Compile Include="TransferType.cs" />
+    <Compile Include="TransportMode.cs" />
+    <Compile Include="Transports.cs" />
+    <Compile Include="TravelClass.cs" />
+    <Compile Include="TravelClassName.cs" />
+    <Compile Include="Travelport.cs" />
+    <Compile Include="TreeNode.cs" />
+    <Compile Include="Trenitalia.cs" />
+    <Compile Include="Trip.cs" />
+    <Compile Include="TripDetailsResponse.cs" />
+    <Compile Include="UNLocode.cs" />
+    <Compile Include="UpdateSchedulesResponse.cs" />
+    <Compile Include="UrbanAgency.cs" />
+    <Compile Include="UrbanLocationPair.cs" />
+    <Compile Include="UrbanResponse.cs" />
+    <Compile Include="UrbanRoute.cs" />
+    <Compile Include="UrbanSegment.cs" />
+    <Compile Include="UrbanTransportMeans.cs" />
+    <Compile Include="UrbanTrip.cs" />
+    <Compile Include="UserBookings.cs" />
+    <Compile Include="UserPreference.cs" />
+    <Compile Include="UserPreferences.cs" />
+    <Compile Include="UserPreferenceType.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Vehicle.cs" />
+    <Compile Include="VehicleType.cs" />
+    <Compile Include="Voucher.cs" />
+    <Compile Include="VoucherType.cs" />
+    <Compile Include="Waypoint.cs" />
+    <Compile Include="WebService.cs" />
+    <Compile Include="WheelchairAccess.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
