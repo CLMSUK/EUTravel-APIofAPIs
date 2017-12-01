@@ -15,11 +15,9 @@ namespace EuTravel_2.BO
     /// </summary>
     [Serializable]
     [DataContract]
-    [KnownType(typeof(ApplicationUser))]
-
     [KnownType(typeof(Passenger))]
 
-    public class Person : ApplicationUser, IDomainModelClass
+    public class Person : IDomainModelClass
     {
         #region Person's Fields
         [DataMember(Name="Forename")]
@@ -1587,10 +1585,9 @@ namespace EuTravel_2.BO
         #endregion
         #region Methods
 
-        public override List<string> _Validate(bool throwException = true)
+        public List<string> _Validate(bool throwException = true)
         {
             var __errors = new List<string>();
-            __errors = base._Validate(throwException);
             if (Forename != null && Forename.Length > 100)
             {
                 __errors.Add("Length of property 'Forename' cannot be greater than 100.");
@@ -1638,7 +1635,6 @@ namespace EuTravel_2.BO
             copy = copy ?? new Person();
             if (!asNew)
             {
-                copy.TransientId = this.TransientId;
             }
             copy.Forename = this.Forename;
             copy.Surname = this.Surname;
@@ -1982,7 +1978,7 @@ namespace EuTravel_2.BO
                     }
                 }
             }
-            base.Copy(deep, copiedObjects, asNew, reuseNestedObjects, copy);
+            
             return copy;
         }
 
@@ -1993,18 +1989,10 @@ namespace EuTravel_2.BO
             {
                 return true;
             }
-            if (compareTo == null || !this.GetType().Equals(compareTo.GetTypeUnproxied()))
-            {
-                return false;
-            }
-            if (this.HasSameNonDefaultIdAs(compareTo))
-            {
-                return true;
-            }
             // Since the Ids aren't the same, both of them must be transient to
             // compare domain signatures; because if one is transient and the
             // other is a persisted entity, then they cannot be the same object.
-            return this.IsTransient() && compareTo.IsTransient() && (base.Equals(compareTo) || this.TransientId.Equals(compareTo.TransientId));
+            return (base.Equals(compareTo));
         }
 
         public override int GetHashCode()

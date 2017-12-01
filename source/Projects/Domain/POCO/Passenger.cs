@@ -703,10 +703,9 @@ namespace EuTravel_2.BO
         #endregion
         #region Methods
 
-        public override List<string> _Validate(bool throwException = true)
+        public List<string> _Validate(bool throwException = true)
         {
             var __errors = new List<string>();
-            __errors = base._Validate(throwException);
             if (throwException && __errors.Any())
             {
                 throw new BusinessException("An instance of TypeClass 'Passenger' has validation errors:\r\n\r\n" + string.Join("\r\n", __errors));
@@ -732,10 +731,6 @@ namespace EuTravel_2.BO
             if (copy == null && copiedObjects.Contains(this))
                 return (Passenger)copiedObjects[this];
             copy = copy ?? new Passenger();
-            if (!asNew)
-            {
-                copy.TransientId = this.TransientId;
-            }
             copy.Accompanied = this.Accompanied;
             if (!copiedObjects.Contains(this))
             {
@@ -897,18 +892,7 @@ namespace EuTravel_2.BO
             {
                 return true;
             }
-            if (compareTo == null || !this.GetType().Equals(compareTo.GetTypeUnproxied()))
-            {
-                return false;
-            }
-            if (this.HasSameNonDefaultIdAs(compareTo))
-            {
-                return true;
-            }
-            // Since the Ids aren't the same, both of them must be transient to
-            // compare domain signatures; because if one is transient and the
-            // other is a persisted entity, then they cannot be the same object.
-            return this.IsTransient() && compareTo.IsTransient() && (base.Equals(compareTo) || this.TransientId.Equals(compareTo.TransientId));
+            return base.Equals(compareTo);
         }
 
         public override int GetHashCode()

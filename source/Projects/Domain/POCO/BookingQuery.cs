@@ -120,92 +120,7 @@ namespace EuTravel_2.BO
                 }
             }
         }
-        [DataMember(Name="PharosAccommodationDetails")]
-        protected IList<PharosAccommodationDetails> pharosAccommodationDetails = new List<PharosAccommodationDetails>();
-        public virtual List<PharosAccommodationDetails> PharosAccommodationDetails
-        {
-            get
-            {
-                if (pharosAccommodationDetails is PharosAccommodationDetails[])
-                {
-                    pharosAccommodationDetails = pharosAccommodationDetails.ToList();
-                }
-                if (pharosAccommodationDetails == null)
-                {
-                    pharosAccommodationDetails = new List<PharosAccommodationDetails>();
-                }
-                return pharosAccommodationDetails.ToList();
-            }
-            set
-            {
-                if (pharosAccommodationDetails is PharosAccommodationDetails[])
-                {
-                    pharosAccommodationDetails = pharosAccommodationDetails.ToList();
-                }
-                if (pharosAccommodationDetails != null)
-                {
-                    var __itemsToDelete = new List<PharosAccommodationDetails>(pharosAccommodationDetails);
-                    foreach (var __item in __itemsToDelete)
-                    {
-                        RemovePharosAccommodationDetails(__item);
-                    }
-                }
-                if(value == null)
-                {
-                    pharosAccommodationDetails = new List<PharosAccommodationDetails>();
-                    return;
-                }
-                foreach(var __item in value)
-                {
-                    AddPharosAccommodationDetails(__item);
-                }
-            }
-        }
-        public virtual void AddPharosAccommodationDetails(IList<PharosAccommodationDetails> __items)
-        {
-            foreach (var __item in __items)
-            {
-                AddPharosAccommodationDetails(__item);
-            }
-        }
-        public virtual void AddPharosAccommodationDetails(PharosAccommodationDetails __item)
-        {
-            if (__item != null && pharosAccommodationDetails!=null && !pharosAccommodationDetails.Contains(__item))
-            {
-                pharosAccommodationDetails.Add(__item);
-            }
-        }
-
-        public virtual void RemovePharosAccommodationDetails(PharosAccommodationDetails __item)
-        {
-            if (__item != null && pharosAccommodationDetails!=null && pharosAccommodationDetails.Contains(__item))
-            {
-                pharosAccommodationDetails.Remove(__item);
-            }
-        }
-        public virtual void SetPharosAccommodationDetailsAt(PharosAccommodationDetails __item, int __index)
-        {
-            if (__item == null)
-            {
-                pharosAccommodationDetails[__index] = null;
-            }
-            else
-            {
-                pharosAccommodationDetails[__index] = __item;
-            }
-        }
-
-        public virtual void ClearPharosAccommodationDetails()
-        {
-            if (pharosAccommodationDetails!=null)
-            {
-                var __itemsToRemove = pharosAccommodationDetails.ToList();
-                foreach(var __item in __itemsToRemove)
-                {
-                    RemovePharosAccommodationDetails(__item);
-                }
-            }
-        }
+        
         [DataMember(Name="Person")]
         protected IList<Person> person = new List<Person>();
         public virtual List<Person> Person
@@ -380,24 +295,6 @@ namespace EuTravel_2.BO
                         copy.Vehicle = (Vehicle)copiedObjects[this.Vehicle];
                     else
                         copy.vehicle = (Vehicle)copiedObjects[this.Vehicle];
-                }
-            }
-            copy.pharosAccommodationDetails = new List<PharosAccommodationDetails>();
-            if(deep && this.pharosAccommodationDetails != null)
-            {
-                foreach (var __item in this.pharosAccommodationDetails)
-                {
-                    if (!copiedObjects.Contains(__item))
-                    {
-                        if (asNew && reuseNestedObjects)
-                            copy.AddPharosAccommodationDetails(__item);
-                        else
-                            copy.AddPharosAccommodationDetails(__item.Copy(deep, copiedObjects, asNew));
-                    }
-                    else
-                    {
-                        copy.AddPharosAccommodationDetails((PharosAccommodationDetails)copiedObjects[__item]);
-                    }
                 }
             }
             copy.person = new List<Person>();

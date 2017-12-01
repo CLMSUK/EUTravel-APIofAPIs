@@ -296,56 +296,6 @@ namespace EuTravel_2.BO
                 }
             }
         }
-        [DataMember(Name="UrbanStart")]
-        protected NCSRDDoorToDoorRoot urbanStart;
-        public virtual NCSRDDoorToDoorRoot UrbanStart
-        {
-            get
-            {
-                return urbanStart;
-            }
-            set
-            {
-                if(Equals(urbanStart, value)) return;
-                var __oldValue = urbanStart;
-                if (value != null)
-                {
-                    urbanStart = value;
-                }
-                else
-                {
-                    if (urbanStart != null)
-                    {
-                        urbanStart = null;
-                    }
-                }
-            }
-        }
-        [DataMember(Name="UrbanEnd")]
-        protected NCSRDDoorToDoorRoot urbanEnd;
-        public virtual NCSRDDoorToDoorRoot UrbanEnd
-        {
-            get
-            {
-                return urbanEnd;
-            }
-            set
-            {
-                if(Equals(urbanEnd, value)) return;
-                var __oldValue = urbanEnd;
-                if (value != null)
-                {
-                    urbanEnd = value;
-                }
-                else
-                {
-                    if (urbanEnd != null)
-                    {
-                        urbanEnd = null;
-                    }
-                }
-            }
-        }
         [DataMember(Name="Transports")]
         protected Transports transports;
         public virtual Transports Transports
@@ -485,44 +435,7 @@ namespace EuTravel_2.BO
                         copy.solution = (Solution)copiedObjects[this.Solution];
                 }
             }
-            if(deep && this.urbanStart != null)
-            {
-                if (!copiedObjects.Contains(this.urbanStart))
-                {
-                    if (asNew && reuseNestedObjects)
-                        copy.UrbanStart = this.UrbanStart;
-                    else if (asNew)
-                        copy.UrbanStart = this.UrbanStart.Copy(deep, copiedObjects, true);
-                    else
-                        copy.urbanStart = this.urbanStart.Copy(deep, copiedObjects, false);
-                }
-                else
-                {
-                    if (asNew)
-                        copy.UrbanStart = (NCSRDDoorToDoorRoot)copiedObjects[this.UrbanStart];
-                    else
-                        copy.urbanStart = (NCSRDDoorToDoorRoot)copiedObjects[this.UrbanStart];
-                }
-            }
-            if(deep && this.urbanEnd != null)
-            {
-                if (!copiedObjects.Contains(this.urbanEnd))
-                {
-                    if (asNew && reuseNestedObjects)
-                        copy.UrbanEnd = this.UrbanEnd;
-                    else if (asNew)
-                        copy.UrbanEnd = this.UrbanEnd.Copy(deep, copiedObjects, true);
-                    else
-                        copy.urbanEnd = this.urbanEnd.Copy(deep, copiedObjects, false);
-                }
-                else
-                {
-                    if (asNew)
-                        copy.UrbanEnd = (NCSRDDoorToDoorRoot)copiedObjects[this.UrbanEnd];
-                    else
-                        copy.urbanEnd = (NCSRDDoorToDoorRoot)copiedObjects[this.UrbanEnd];
-                }
-            }
+            
             if(deep && this.transports != null)
             {
                 if (!copiedObjects.Contains(this.transports))

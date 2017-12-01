@@ -28,8 +28,6 @@ namespace EuTravel_2.BO
         protected bool isMainStation;
         [DataMember(Name="StateProvinceCode")]
         protected string stateProvinceCode;
-        [DataMember(Name="StationType")]
-        protected EuTravel_2.BO.SilverrailStationType stationType;
         [DataMember(Name="NameOnPrintedTicket")]
         protected string nameOnPrintedTicket;
         [DataMember(Name="IATACode")]
@@ -108,22 +106,6 @@ namespace EuTravel_2.BO
             set
             {
                 stateProvinceCode = value;
-            }
-        }
-/// <summary>
-/// The StationType property
-///
-/// </summary>
-///
-        public virtual EuTravel_2.BO.SilverrailStationType StationType
-        {
-            get
-            {
-                return stationType;
-            }
-            set
-            {
-                stationType = value;
             }
         }
 /// <summary>
@@ -581,7 +563,6 @@ namespace EuTravel_2.BO
             copy.ItineraryStation = this.ItineraryStation;
             copy.IsMainStation = this.IsMainStation;
             copy.StateProvinceCode = this.StateProvinceCode;
-            copy.StationType = this.StationType;
             copy.NameOnPrintedTicket = this.NameOnPrintedTicket;
             copy.IATACode = this.IATACode;
             copy.TrainOperatingCompany = this.TrainOperatingCompany;
